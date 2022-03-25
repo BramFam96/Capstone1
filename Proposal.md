@@ -27,8 +27,7 @@ I plan on using thesneakerapi for general data on shoes:
 
 ### a) - Database schema
 
-DB is comprised of a user, item, favorite, and maybe a watchlist table, maybe comments.
-Users and items will contain respective data, the rest will be rel. tables.
+[Schema Design](crowsfoot.jpeg)
 
 ### b) - Possible issues?
 
