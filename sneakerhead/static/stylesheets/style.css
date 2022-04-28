@@ -1,0 +1,289 @@
+/* ====================== General */
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body.error-404 {
+	background-color: #1da1f2;
+}
+.bg {
+	background-color: #fff;
+}
+.form-control {
+	margin-bottom: 20px;
+}
+
+.btn {
+	border-radius: 25%;
+}
+a,
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	list-style-type: none;
+}
+p {
+	font-weight: bold;
+}
+.btn:hover {
+	cursor: pointer;
+}
+.flex-r {
+	display: flex;
+}
+.flex-c {
+	display: flex;
+	flex-direction: column;
+}
+.flex-w {
+	flex-wrap: wrap;
+}
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.center-txt {
+	justify-content: center;
+	text-align: center;
+}
+/* ======================= Nav */
+
+.navbar {
+	background-color: #fff;
+	height: 46px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+	margin-bottom: 1rem;
+	position: relative;
+	z-index: 9999;
+}
+
+.navbar a {
+	color: #66757f;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.navbar a:hover {
+	color: #1c94e0;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-brand > img {
+	display: inline-block;
+	margin-bottom: 2px;
+	margin-right: 5px;
+	width: 20px;
+	border-radius: 2px;
+}
+
+.nav > li > a > img {
+	width: 32px;
+	border-radius: 32px;
+}
+
+ul.nav.navbar-nav {
+	align-items: center;
+}
+
+ul.nav.navbar-nav li {
+	margin: 0 0.5rem;
+	display: flex;
+}
+
+nav + .container {
+	margin-bottom: 1rem;
+}
+/*  */
+/* HOME PAGE */
+/*  */
+.home-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.cat-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1vw;
+	list-style: none;
+	margin-top: 1rem;
+}
+.cat-list-link {
+	border: 2px solid black;
+	padding: 1rem;
+	border-radius: 25px;
+	text-align: center;
+	flex: 1 1 auto;
+}
+
+.cat-list-link:hover {
+	background-color: rgb(68, 68, 68);
+	color: white;
+}
+
+/******************* User Profile ********************************/
+
+.card-wrapper {
+	margin-left: 1rem;
+	border: 2px solid rgb(75, 75, 75);
+	width: 400px;
+}
+
+#profile-avatar {
+	max-width: 100%;
+}
+.user-info-wrapper {
+	display: flex;
+	flex-direction: row;
+
+	align-items: flex-start;
+}
+.user-info {
+	padding: 1rem 0 0 1rem;
+	display: flex;
+
+	justify-content: space-between;
+}
+.user-info > * {
+	flex: 1 1 100%;
+}
+.user-info > * > * {
+	width: 100%;
+}
+.profile-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+ul.recommended {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	width: 900px;
+	overflow-x: auto;
+}
+ul.recommended li {
+	flex: 0 0 auto;
+	width: 300px;
+}
+ul.recommended img {
+	width: 100%;
+}
+ul.fav-list {
+	padding: 0;
+	margin: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+}
+ul.fav-list > li {
+	max-width: 25vw;
+	flex: 1 0 30%;
+}
+ul.fav-list img {
+	width: 100%;
+	max-width: 450px;
+}
+@media (max-width: 400px) {
+	.card-wrapper {
+		border: none;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+		max-width: 100%;
+		flex-direction: column;
+		margin: 0;
+	}
+	#profile-avater {
+		max-width: 100%;
+	}
+	.user-info {
+		padding-bottom: 0;
+	}
+}
+/******************* Shoes **************/
+/* Shoe list */
+.shoe-list {
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 1vw;
+	list-style: none;
+	margin-top: 1rem;
+}
+
+.shoe-list-item {
+	background-color: #fff;
+	flex: 1 1 45%;
+}
+.shoe-list-item:hover {
+	outline: 2px solid rgb(59, 59, 59);
+	border-radius: 0.5rem;
+}
+@media (min-width: 500px) {
+	.shoe-list-item {
+		flex: 1 1 20%;
+	}
+}
+.shoe-img {
+	max-width: 50%;
+}
+.shoe-list-btn-wrapper {
+	justify-content: space-between;
+	padding: 0.5em;
+}
+.shoe-btn-wrapper > * {
+	flex: 1 1 100%;
+
+	border-radius: 0%;
+}
+/* Shoe detail */
+.shoe-card {
+	display: flex;
+	outline: 2px solid rgb(59, 59, 59);
+	flex-direction: column;
+	max-width: 50%;
+}
+.shoe-card > * {
+	flex: 1 1 100%;
+}
+.full-size {
+	max-width: 1200px;
+	outline: 2px solid black;
+}
+
+.shoe-info > * {
+	display: flex;
+	flex-wrap: wrap;
+}
+.shoe-info {
+	width: 100%;
+}
+.shoe-info > * > * {
+	justify-content: flex-start;
+	align-self: flex-start;
+
+	flex: 1 1 50%;
+}
