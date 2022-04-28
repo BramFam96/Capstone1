@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<div class="home-container">
+	<h1>Welcome to SneakerHead</h1>
+
+  </div>
+	<div class="col-lg-10 col-md-10 col-sm-12">
+		<h1 class="mb-1">Browse by brand</h1>
+		<ul class="cat-list" id="brands">
+			<a href="/shoes" class="cat-list-link">
+				<li class="cat-list-item">
+					<h2>All</h2>
+				</li>
+			</a>
+			{% for brand in g.brands %}
+			<a href="/search/{{brand}}" class="cat-list-link">
+				<li class="cat-list-item">
+					<h2>{{brand}}</h2>
+				</li>
+			</a>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endblock %}
+  <!-- <div class="flex-r">
+      <form action="/search" id="search_form">
+        {{ form.hidden_tag() }}
+
+        {% for field in form if field.widget.input_type != 'hidden' %}
+          {% for error in field.errors %}
+            <span class="text-danger">{{ error }}</span>
+          {% endfor %}
+          {{ field(placeholder=field.label.text, class="form-control") }}
+        {% endfor %}
+
+        <button class="btn btn-primary btn-block btn-lg">Search</button>
+      </form>
+    </div> -->

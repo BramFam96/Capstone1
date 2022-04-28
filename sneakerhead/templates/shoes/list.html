@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block content %}
+	<h1>Filtered for {{title}}</h1>
+	<div class="center flex-c">  
+   {%if shoes%}
+		<ul class="shoe-list ml-1">
+			{%for shoe in shoes%}
+			<li class="shoe-list-item">
+				<a href="{{url_for('show_shoe', shoe_id = shoe.id)}}">
+					<p>{{shoe.name}}</p>
+          
+					<div class="flex-r">
+            {%if shoe.img_original%}
+						<img src="{{shoe.img_original}}" alt="{{shoe.name}}" class="shoe-img" />
+						{%else%}
+            <img src="{{shoe.img_small}}" alt="{{shoe.name}}" class="shoe-img" />
+            {%endif%}
+            <ul class="flex-c flex-w">
+							<li>G: {{shoe.gender}}</li>
+              <li>Y: 
+                {%if shoe.year != 0%}
+							  {{shoe.year}}
+              </li>
+                {%else%}
+              N/A
+              </li>
+              {%endif%}
+              <li>P: 
+              {% if shoe.retail_price != 0 %}
+              ${{shoe.retail_price}}</li>
+              {%else%}
+              N/A</li>
+              {%endif%}
+						</ul>
+					</div>	
+        </a>
+          <div id = 'shoe-btn-wrapper' class = 'flex-r shoe-list-btn-wrapper'>
+            <p class = 'mt-2'>{{shoe.colorway[:15]}}...</p>
+            <form
+            method="POST"
+            action="/shoes/{{shoe.id}}/like"
+            class="like-shoe"
+          >
+            {% if shoe in g.user.liked_shoes %}
+            <button class="btn btn-sm btn-primary like-btn">
+              <i class="fa fa-thumbs-up"></i>
+            </button>
+            {% else %}
+            <button class="btn btn-sm btn-secondary like-btn">
+              <i class="fa fa-thumbs-up"></i>
+            </button>
+            {% endif %}
+            </form>
+          </div>    
+			</li>
+			{%endfor%}
+		</ul>
+    <div class="col-3" >
+      <button>Next Page</button>
+    </div>
+    {%else%}
+  <h1>No results found</h1>
+  {%endif%}
+</div>
+	{% endblock%}

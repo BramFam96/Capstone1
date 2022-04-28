@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  
+  <div class="center">
+    <div class="col-10">
+
+              <div class="shoe-card bg">
+                
+                  <h2 class="center-txt">{{(shoe.title).title()}}</h2>
+                {%if shoe.img_original%}
+                <img src="{{shoe.img_original}}" alt="{{shoe.name}}" class="shoe-img full-size" />
+                {%else%}
+                <img src="{{shoe.img_small}}" alt="{{shoe.name}}" class="shoe-img full-size" />
+                {%endif%}
+                
+                <ul class="shoe-info col-10">
+                  <div class="flex-r">
+                  
+                    <li> 
+                      <p>Price - 
+                      {% if shoe.retail_price != 0 %}
+                      ${{shoe.retail_price}}</p>
+                    </li>
+                      {%else%}
+                      N/A</p>
+                    </li>
+                    {%endif%}
+                    
+                    <li> 
+                      <p>Gender - {{shoe.gender}}</p>
+                    </li>
+                    
+                    <li> 
+                      <p>Released - 
+                      {%if shoe.year != 0%}
+                      {{shoe.year}}</p>
+                    </li>
+                      {%else%}
+                      N/A</p>
+                    </li>
+                    {%endif%}
+                    
+                    <li>
+                      <p>Color - {{shoe.colorway}}</p>
+                    </li>
+                  
+                  </div>
+                </ul>              
+                <form method="POST" action="/shoes/{{shoe.id}}/like" class="full-size">
+                  <div id = 'shoe-btn-wrapper' class = 'flex-r shoe-btn-wrapper'>
+                    {% if shoe in g.user.liked_shoes %}
+                      <button class="btn btn-sm btn-secondary like-btn">
+                        Remove from likes
+                      </button>
+                    {% else %}
+                      <button class="btn btn-sm btn-primary like-btn">
+                        Add to likes
+                      </button>
+                    {% endif %}
+                  </div>
+                </form>
+              
+            </div>	
+            {%if rec%}
+      <div>
+    
+        <ul class = 'recommended'>
+          {% for shoe in rec %}
+          <li>
+            <a href="{{url_for('show_shoe', shoe_id = shoe.id)}}">
+              <p>{{shoe.name}}</p>
+              <img src='{{shoe.img_small}}' alt="{{shoe.title}}">
+            </a>
+        </li>
+        {%endfor%}
+        </ul>
+      </div>
+      {%endif%}
+    </div>
+  </div>
+
+{% endblock %}
