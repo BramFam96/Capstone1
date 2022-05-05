@@ -59,7 +59,6 @@ It uses V1 of the sneakerdatabase api for its source data, while internal data m
 
 The following tools were used in this project:
 
-- [pip]
 - [Flask](https://expo.io/)
 - [Python](https://nodejs.org/en/)
 - [SQLAlchemy](https://pt-br.reactjs.org/)

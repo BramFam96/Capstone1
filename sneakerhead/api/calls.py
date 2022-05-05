@@ -1,11 +1,14 @@
 import requests
-from api.secret import API_KEY
+import os
+from api.secret import *
+
+key = os.environ.get('API_KEY', LOCAL_KEY)
 
 def config_path(slug):
   url = f'https://v1-sneakers.p.rapidapi.com/v1/{slug}'
   headers = {
     "X-RapidAPI-Host": "v1-sneakers.p.rapidapi.com",
-    "X-RapidAPI-Key": f"{API_KEY}"
+    "X-RapidAPI-Key": f"{key}"
   }
   return (url, headers)
 
