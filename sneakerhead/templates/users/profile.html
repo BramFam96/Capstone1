@@ -29,30 +29,34 @@
 			</ul>
 		</div>
 	</section>
+	{%if user.liked_shoes%}
 	<section class="shoe-list row"></section>
-	<div class="col-9">
-		<ul class="fav-list">
-			{%for shoe in g.user.liked_shoes%}
-			<li class="shoe-list-item flex-c">
-				<a href="{{url_for('show_shoe', shoe_id = shoe.id)}}">
-					<p>{{shoe.name}}</p>
-					<img src="{{shoe.img_small}}" alt="{{shoe.name}}" />
-				</a>
-				<form method="POST" action="/shoes/{{shoe.id}}/like" class="full-size">
-					<div id="shoe-btn-wrapper" class="flex-r shoe-btn-wrapper">
-						{% if shoe in g.user.liked_shoes %}
-						<button class="btn btn-sm btn-secondary like-btn">
-							Remove from likes
-						</button>
-						{% else %}
-						<button class="btn btn-sm btn-primary like-btn">Add to likes</button>
-						{% endif %}
-					</div>
-				</form>
-			</li>
-			{%endfor%}
-		</ul>
-	</div>
-</div>
+		<div class="col-9">
+			<ul class="fav-list">
+				{%for shoe in user.liked_shoes%}
+				<li class="shoe-list-item flex-c">
+					<a href="{{url_for('show_shoe', shoe_id = shoe.id)}}">
+						<p>{{shoe.name}}</p>
+						<img src="{{shoe.img_small}}" alt="{{shoe.name}}" />
+					</a>
+					<form method="POST" action="/shoes/{{shoe.id}}/like" class="full-size">
+						<div id="shoe-btn-wrapper" class="flex-r shoe-btn-wrapper">
+							{% if shoe in g.user.liked_shoes %}
+							<button class="btn btn-sm btn-secondary like-btn">
+								Remove from likes
+							</button>
+							{% else %}
+							<button class="btn btn-sm btn-primary like-btn">Add to likes</button>
+							{% endif %}
+						</div>
+					</form>
+				</li>
+				{%endfor%}
+			</ul>
+		</div>
+</section>
+{%else%}
+<p>{{user.username.title()}} has not liked any shoes yet</p>
+{% endif %}
 
 {% endblock %}
