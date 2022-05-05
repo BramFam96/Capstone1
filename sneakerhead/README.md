@@ -1,36 +1,7 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Sneakerhead" />
-
-&#xa0;
-
-  <!-- <a href="https://sneakerhead.netlify.app">Demo</a> -->
-</div>
-
-<h1 align="center">Sneakerhead</h1>
-
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/BramFam96/sneakerhead?color=56BEB8">
-
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/BramFam96/sneakerhead?color=56BEB8">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/BramFam96/sneakerhead?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/BramFam96/sneakerhead?color=56BEB8">
-
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/sneakerhead?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/sneakerhead?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/sneakerhead?color=56BEB8" /> -->
-</p>
+<h1 align="center">Sneakerhead is [live](https://sneaker-head-flask-app.herokuapp.com/) 🚀! </h1>
+<h2 align='center'> <a href = 'https://sneaker-head-flask-app.herokuapp.com/'> Go now </a></h2>
 
 <!-- Status -->
-
-<h4 align="center"> 
-	<a href='https://sneaker-head-flask-app.herokuapp.com/'>Sneakerhead </a> is live! 🚀 
-</h4>
-
-<hr> -->
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
