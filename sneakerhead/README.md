@@ -27,7 +27,7 @@
 <!-- Status -->
 
 <h4 align="center"> 
-	Sneakerhead is live! 🚀 
+	<a href='https://sneaker-head-flask-app.herokuapp.com/'>Sneakerhead </a> is live! 🚀 
 </h4>
 
 <hr> -->
@@ -39,7 +39,7 @@
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/BramFam96" target="_blank">Author</a>
 </p>
 
 <br>
@@ -62,13 +62,14 @@ The following tools were used in this project:
 - [Flask](https://expo.io/)
 - [Python](https://nodejs.org/en/)
 - [SQLAlchemy](https://pt-br.reactjs.org/)
-- [PSQL]
-- [WTForms]
-- [heroku]
+- [PSQL](https://www.postgresql.org/docs/current/app-psql.html)
+- [WTForms](https://wtforms.readthedocs.io/en/3.0.x/)
+- [heroku](https://heroku.com)
 
 ## :white_check_mark: Requirements
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Python](https://nodejs.org/en/) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), Python, and PSQL installed.
+You will need to run the seed.py file!
 You will also need to obtain an individual api key from [TheSneakerDatabase]
 
 ## :checkered_flag: Starting
