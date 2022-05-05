@@ -1,4 +1,4 @@
-<h1 align="center">Sneakerhead is [live](https://sneaker-head-flask-app.herokuapp.com/) 🚀! </h1>
+<h1 align="center">Sneakerhead is live 🚀! </h1>
 <h2 align='center'> <a href = 'https://sneaker-head-flask-app.herokuapp.com/'> Go now </a></h2>
 
 <!-- Status -->
@@ -39,11 +39,13 @@ The following tools were used in this project:
 
 ## :white_check_mark: Requirements
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), Python, and PSQL installed.
+### Before starting :checkered_flag:
+
+You need to have [Git](https://git-scm.com), Python, and PSQL installed.
 You will need to run the seed.py file!
 You will also need to obtain an individual api key from [TheSneakerDatabase]
 
-## :checkered_flag: Starting
+## :rocket: Starting
 
 ```bash
 # Clone this project
