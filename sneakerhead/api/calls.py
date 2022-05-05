@@ -43,10 +43,3 @@ def get_brands():
   brand_list = [b.title() for b in q['results']]
   
   return brand_list
-
-# Genders
-def get_genders():
-  url, headers = config_path('genders')
-  q = get_data(url, headers)
-  gender_list = [g.title() for g in q['results']]
-  return gender_list

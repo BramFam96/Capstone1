@@ -1,0 +1,5 @@
+venv
+.vscode
+__pycache__
+api/__pycache__
+api/secret.py
