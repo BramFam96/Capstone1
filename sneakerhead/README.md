@@ -43,7 +43,7 @@ The following tools were used in this project:
 
 You need to have [Git](https://git-scm.com), Python, and PSQL installed.
 You will need to run the seed.py file!
-You will also need to obtain an individual api key from [TheSneakerDatabase]
+You will also need to obtain an individual api key from [TheSneakerDatabase](https://rapidapi.com/tg4-solutions-tg4-solutions-default/api/v1-sneakers/pricing)
 
 ## :rocket: Starting
 
