@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, flash, redirect, session, g, 
 from flask_debugtoolbar import DebugToolbarExtension
 from sqlalchemy.exc import IntegrityError
 
-from forms import UserAddForm, LoginForm, UserEditForm, SearchForm
+from forms import UserAddForm, LoginForm, UserEditForm
 from models import db, connect_db, User, Shoe
 from api.calls import *
 
@@ -46,15 +46,6 @@ def add_brands_g():
     else:
         session['brands'] = get_brands()
         g.brands = session['brands']
-
-@app.before_request
-def add_genders_to_g():
-    '''If seesion does not already have it, query api for genders'''
-    if 'genders' in session:
-        g.genders = session['genders']    
-    else:
-        session['genders'] = get_genders()
-        g.genders = session['genders']
 
 # Log-in/Log-out/Sign-up
 def do_login(user):
@@ -202,8 +193,13 @@ def show_all_shoes():
 @app.route('/search/<shoe_brand>')
 def show_shoe_brand(shoe_brand):
     '''Show a list of shoes by brand'''
-    
-    shoes = get_sneakers({'brand':shoe_brand})
+    if 'page' in session:
+        g.page = session['page'] + 1
+    else:
+        session['page'] = 0
+        g.page = session['page']
+    g.brand = shoe_brand
+    shoes = get_sneakers({'brand':shoe_brand, 'page':g.page})
     s = config_shoe_data(shoes)
     return render_template('shoes/list.html', title = shoe_brand, shoes=s)
 
@@ -248,13 +244,7 @@ def user_profile(user_id):
     user = User.query.get_or_404(user_id)
 
     return render_template('users/profile.html', user=user)
-
-    #  View likes
-@app.route('/users/<int:user_id>/likes')
-def show_likes(user_id):
-        user = User.query.get_or_404(user_id)
-        return render_template('users/likes.html', user=user)
-###########################################################################
+############
 
 # Edit user profile
 @app.route('/users/<int:user_id>/edit', methods=["GET", "POST"])
